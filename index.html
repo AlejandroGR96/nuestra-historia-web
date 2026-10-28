@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5b203b">
+  <meta name="description" content="Un pequeño mundo digital para guardar nuestra historia, recuerdos y sueños.">
+  <title>Nuestra historia ❤️</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio"><span class="brand-mark">♥</span><span
+        id="brandNames">Nuestra historia</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#historia">Historia</a>
+      <a href="#recuerdos">Recuerdos</a>
+      <a href="#musica">Música</a>
+      <a href="#cartas">Cartas</a>
+      <a href="#suenos">Sueños</a>
+      <a href="#capsulas">Cápsula del tiempo</a>
+      <a href="#mensaje">Dime algo</a>
+      <button class="icon-button settings-trigger" id="openSettings" title="Personalizar"
+        aria-label="Personalizar página">⚙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> NUESTRO PEQUEÑO UNIVERSO</p>
+        <h1>La mejor parte de mi historia <em>es contigo.</em></h1>
+        <p class="hero-intro">Un rincón para recordar lo vivido, guardar lo que sentimos y soñar con todo lo que nos
+          falta por vivir.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#historia">Explorar nuestra historia <span
+              aria-hidden="true">↘</span></a>
+          <button class="button button-soft" id="surpriseButton">Sorpréndeme ✨</button>
+        </div>
+        <div class="hero-counter-card">
+          <div class="counter-heart">♥</div>
+          <div class="counter-content">
+            <span class="micro-label">CADA SEGUNDO CUENTA</span>
+            <strong id="togetherLabel">Nuestro tiempo juntos</strong>
+            <div class="counter-grid" id="loveCounter">
+              <div><b>—</b><span>años</span></div>
+              <div><b>—</b><span>meses</span></div>
+              <div><b>—</b><span>días</span></div>
+              <div><b>—</b><span>horas</span></div>
+              <div><b>—</b><span>min</span></div>
+              <div><b>—</b><span>seg</span></div>
+            </div>
+            <small id="counterHint">Configura la fecha en que comenzó vuestra historia.</small>
+          </div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Ilustración decorativa de recuerdos">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="sun-disc"></div>
+        <div class="photo-card photo-back">
+          <div class="photo-placeholder placeholder-sky"><span>✦</span></div>
+          <p>un día bonito</p>
+        </div>
+        <div class="photo-card photo-front">
+          <div class="photo-placeholder placeholder-rose"><span class="big-heart"></span><span class="tiny-caption">TÚ
+              + YO</span></div>
+          <p>Mi vida entera</p>
+        </div>
+        <span class="float-note note-one">para siempre ✦</span><span class="float-note note-two">♡</span><span
+          class="float-note note-three">our story</span>
+      </div>
+      <a class="scroll-cue" href="#recuerdoDelDia"><span></span> DESLIZA PARA DESCUBRIR</a>
+    </section>
+
+    <section class="daily-memory section-wrap" id="recuerdoDelDia">
+      <div class="daily-icon">✧</div>
+      <div class="daily-copy">
+        <p class="eyebrow">UN PEQUEÑO VIAJE AL PASADO</p>
+        <h2 id="dailyTitle">Un recuerdo para volver a sonreír</h2>
+        <p id="dailyText">Cuando guardes vuestro primer recuerdo, aparecerá aquí para sorprenderte cada día.</p>
+      </div>
+      <button class="text-button" id="newMemoryButton">Ver otro recuerdo <span>↗</span></button>
+    </section>
+
+    <section class="section-wrap section-block" id="historia">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CAPÍTULO A CAPÍTULO</p>
+          <h2>Así se escribe <em>lo nuestro.</em></h2>
+          <p class="section-description">Los momentos pequeños también merecen un lugar en nuestra historia.</p>
+        </div><button class="button button-outline" id="addStoryButton">＋ Añadir momento</button>
+      </div>
+      <div class="timeline" id="timelineList">
+        <div class="empty-state"><span>✦</span>
+          <h3>Todo gran amor tiene un comienzo</h3>
+          <p>Añade la primera fecha especial y empieza a construir vuestra línea de tiempo.</p><button
+            class="text-button" data-action="add-story">Crear primer recuerdo ↗</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="recuerdos">
+      <div class="section-wrap section-block">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">INSTANTÁNEAS DE NUESTRA VIDA</p>
+            <h2>Pequeños momentos, <em>grandes recuerdos.</em></h2>
+            <p class="section-description">Fotos, videos y esas historias que siempre nos hacen sonreír.</p>
+          </div><label class="button button-primary upload-button">＋ Subir recuerdo<input id="galleryUpload" type="file"
+              accept="image/*,video/*" multiple hidden></label>
+        </div>
+        <div class="gallery-tools">
+          <div class="filter-pills" id="galleryFilters"><button class="filter-pill active"
+              data-filter="Todos">Todos</button><button class="filter-pill" data-filter="Viajes">Viajes</button><button
+              class="filter-pill" data-filter="Citas">Citas</button><button class="filter-pill"
+              data-filter="Celebraciones">Celebraciones</button><button class="filter-pill"
+              data-filter="Cotidianos">Cotidianos</button></div><span class="item-count" id="galleryCount">0 recuerdos
+            guardados</span>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-empty">
+            <div class="empty-camera">▧</div>
+            <h3>Este espacio espera sus recuerdos</h3>
+            <p>Sube una foto o video y acompáñalo de una descripción.</p><label class="text-button upload-link">Elegir
+              archivos <input type="file" accept="image/*,video/*" multiple hidden
+                class="gallery-upload-secondary"></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="music-section" id="musica">
+      <div class="section-wrap section-block music-layout">
+        <div class="music-copy">
+          <p class="eyebrow">LA BANDA SONORA DE NOSOTROS</p>
+          <h2>Hay canciones que <em>se sienten como tú.</em></h2>
+          <p class="section-description">Guarda aquí esas canciones que tienen un significado especial para los dos. La
+            música se reproducirá cuando tú lo decidas.</p><label class="button button-light upload-button">＋ Añadir
+            canción<input id="songUpload" type="file" accept="audio/*" multiple hidden></label>
+          <p class="tiny-note">Los archivos de audio se guardan en este navegador.</p>
+        </div>
+        <div class="player-card">
+          <div class="vinyl-wrap">
+            <div class="vinyl" id="vinylDisc">
+              <div class="vinyl-label">♡</div>
+            </div><span class="music-note">♪</span>
+          </div>
+          <div class="player-info"><span class="micro-label">SONANDO EN NUESTRO UNIVERSO</span>
+            <h3 id="songTitle">Nuestra próxima canción</h3>
+            <p id="songArtist">Añade una canción para comenzar</p><audio id="audioPlayer" controls
+              preload="metadata"></audio>
+            <div class="player-bottom"><button class="player-control" id="prevSong"
+                aria-label="Canción anterior">⏮</button><span id="songPosition">0 canciones</span><button
+                class="player-control" id="nextSong" aria-label="Siguiente canción">⏭</button></div>
+          </div>
+          <div class="playlist" id="playlist">
+            <div class="playlist-empty">Todavía no hay canciones en la lista.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap section-block letters-section" id="cartas">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PALABRAS QUE ABRAZAN</p>
+          <h2>Un pedacito de mí, <em>para ti.</em></h2>
+          <p class="section-description">Cartas para los días bonitos, para los difíciles y para cualquier día en que
+            necesitemos recordar.</p>
+        </div><button class="button button-primary" id="addLetterButton">＋ Escribir una carta</button>
+      </div>
+      <div class="letters-grid" id="lettersGrid">
+        <div class="letter-placeholder">
+          <div class="envelope-illustration">✉</div>
+          <h3>Hay palabras esperando ser escritas</h3>
+          <p>Tu primera carta puede quedarse aquí para siempre.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dreams-section" id="suenos">
+      <div class="section-wrap section-block">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TODAVÍA NOS FALTA TANTO POR VIVIR</p>
+            <h2>Nuestra lista de <em>aventuras.</em></h2>
+            <p class="section-description">Pequeños planes, grandes sueños y lugares que algún día serán recuerdos.</p>
+          </div>
+        </div>
+        <form class="inline-add-form" id="dreamForm"><input id="dreamInput" type="text" maxlength="180"
+            placeholder="¿Qué queremos hacer juntos?" required><select id="dreamCategory"
+            aria-label="Categoría del plan">
+            <option value="Una cita">Una cita</option>
+            <option value="Un viaje">Un viaje</option>
+            <option value="Un sueño">Un sueño</option>
+            <option value="Algo sencillo">Algo sencillo</option>
+          </select><button class="button button-primary" type="submit">＋ Agregar plan</button></form>
+        <div class="dream-progress">
+          <div><span>AVENTURAS CUMPLIDAS</span><strong id="dreamProgressLabel">0 de 0</strong></div>
+          <div class="progress-track"><span id="dreamProgressBar"></span></div>
+        </div>
+        <div class="dream-list" id="dreamList">
+          <div class="dreams-empty">Todavía no hay planes. ¿Cuál será la primera aventura? ✨</div>
+        </div>
+        <div class="date-roulette">
+          <div><span class="roulette-sparkle">✧</span>
+            <div>
+              <h3>¿No sabemos qué hacer en una cita?</h3>
+              <p>Dejemos que el azar nos dé una idea bonita.</p>
+            </div>
+          </div><button class="button button-outline" id="rouletteButton">Elegir un plan 🎲</button>
+          <p class="roulette-result" id="rouletteResult" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="capsule-section" id="capsulas">
+      <div class="section-wrap section-block capsule-layout">
+        <div class="capsule-art">
+          <div class="capsule-glow"></div>
+          <div class="time-capsule">
+            <div class="capsule-lid"></div>
+            <div class="capsule-body"><span>OUR</span><strong>♡</strong><span>FUTURE</span></div>
+          </div><span class="star star-a">✦</span><span class="star star-b">✧</span><span class="star star-c">✦</span>
+        </div>
+        <div class="capsule-copy">
+          <p class="eyebrow">UNA CARTA PARA NUESTRO YO DEL FUTURO</p>
+          <h2>Hay recuerdos que <em>merecen esperar.</em></h2>
+          <p class="section-description">Escribe lo que sientes hoy, guarda una foto o un deseo y elige cuándo volver a
+            encontrarlo. El futuro tiene una sorpresa reservada para ustedes.</p><button class="button button-light"
+            id="addCapsuleButton">＋ Crear una cápsula</button>
+          <p class="capsule-note">Las cápsulas de esta versión se guardan en este navegador y se desbloquean según la
+            fecha de tu dispositivo.</p>
+        </div>
+      </div>
+      <div class="section-wrap capsule-list-wrap">
+        <div class="capsule-list-heading">
+          <h3>Nuestras cápsulas</h3><span id="capsuleCount">0 cápsulas</span>
+        </div>
+        <div class="capsule-list" id="capsuleList">
+          <div class="capsules-empty">Aquí aparecerán las cartas y recuerdos que reservemos para el futuro.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="message-section" id="mensaje">
+      <div class="section-wrap message-layout">
+        <div class="message-copy">
+          <p class="eyebrow">NO HACE FALTA ESPERAR A UNA OCASIÓN ESPECIAL</p>
+          <h2>¿Qué te gustaría <em>hacer conmigo?</em></h2>
+          <p>Elige una idea, cuéntame lo que tienes en mente y mándame un mensajito. A veces, los mejores recuerdos
+            empiezan con una pregunta sencilla.</p>
+          <div class="message-doodle">♡ <span>un plan contigo</span> ♡</div>
+        </div>
+        <form class="message-card" id="whatsappForm"><label class="field-label">Hoy me gustaría...</label>
+          <div class="choice-grid" id="messageChoices"><button class="message-choice selected" type="button"
+              data-choice="Quiero comer algo 🍔"><span>🍔</span>Comer algo</button><button class="message-choice"
+              type="button" data-choice="Quiero tomar algo ☕"><span>☕</span>Tomar algo</button><button
+              class="message-choice" type="button" data-choice="Quiero salir 🚗"><span>🚗</span>Salir</button><button
+              class="message-choice" type="button" data-choice="Quiero una cita romántica 🥰"><span>🥰</span>Una
+              cita</button><button class="message-choice" type="button"
+              data-choice="Quiero ver una película 🎬"><span>🎬</span>Ver una peli</button><button
+              class="message-choice" type="button"
+              data-choice="Quiero hablar contigo 💬"><span>💬</span>Hablar</button><button class="message-choice"
+              type="button" data-choice="Quiero proponerte otra cosa ✨"><span>✨</span>Otra idea</button></div><label
+            for="whatsappMessage" class="field-label">Cuéntame un poquito más</label><textarea id="whatsappMessage"
+            rows="3" maxlength="600" placeholder="Tengo ganas de... o se me ocurrió algo bonito..."></textarea><button
+            class="button button-primary send-whatsapp" type="submit">Enviar a WhatsApp <span>↗</span></button>
+          <p class="tiny-note" id="whatsappHint">Configura el número de WhatsApp desde el botón ⚙ del menú.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="anniversary-strip">
+      <div class="section-wrap anniversary-inner">
+        <div class="anniversary-icon">♥</div>
+        <div>
+          <p class="eyebrow">Y QUE VENGAN MUCHOS MÁS</p>
+          <h2 id="anniversaryTitle">Cada día juntos es motivo para celebrar.</h2>
+          <p id="anniversaryText">Configura vuestra fecha especial y aquí contaremos cuánto falta para el próximo
+            aniversario.</p>
+        </div>
+        <div class="anniversary-date" id="anniversaryCountdown">∞<span>momentos por vivir</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#inicio"><span class="brand-mark">♥</span> Nuestra
+      historia</a>
+    <p>Hecho con amor, para los recuerdos de hoy y los de mañana.</p><a href="#inicio" class="back-top">Volver arriba
+      ↑</a>
+    <div class="footer-bottom"><span>Un pequeño universo compartido</span><span>♡</span><span id="footerYear"></span>
+    </div>
+  </footer>
+
+  <!-- Settings modal -->
+  <dialog class="app-dialog" id="settingsDialog">
+    <form id="settingsForm" method="dialog">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">HAZLO VUESTRO</p>
+          <h2>Personalizar la página</h2>
+        </div><button class="dialog-close" type="button" data-close="settingsDialog" aria-label="Cerrar">×</button>
+      </div>
+      <p class="dialog-description">Estos datos ayudan a personalizar los textos y el contador.</p>
+      <div class="form-grid">
+        <div class="form-field"><label for="yourName">Tu nombre</label><input id="yourName" maxlength="60"
+            placeholder="¿Cómo te llamas?"></div>
+        <div class="form-field"><label for="partnerName">Nombre de tu pareja</label><input id="partnerName"
+            maxlength="60" placeholder="¿Cómo se llama?"></div>
+        <div class="form-field"><label for="startDate">Fecha en que comenzó la relación</label><input id="startDate"
+            type="date"></div>
+        <div class="form-field"><label for="whatsappNumber">Número de WhatsApp</label><input id="whatsappNumber"
+            inputmode="tel" placeholder="573001234567"><small>Incluye el código de país, sin + ni espacios. Ej.:
+            Colombia 57...</small></div>
+      </div>
+      <div class="dialog-actions"><button class="button button-outline" type="button"
+          data-close="settingsDialog">Cancelar</button><button class="button button-primary" type="submit">Guardar
+          cambios</button></div>
+    </form>
+  </dialog>
+
+  <!-- Add gallery item modal -->
+  <dialog class="app-dialog" id="galleryDialog">
+    <form id="galleryForm" method="dialog">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">UN RECUERDO MÁS</p>
+          <h2>Guardar recuerdo</h2>
+        </div><button class="dialog-close" type="button" data-close="galleryDialog" aria-label="Cerrar">×</button>
+      </div>
+      <p id="galleryFilesLabel" class="dialog-description">Añade una descripción a los archivos seleccionados.</p>
+      <div class="form-field"><label for="galleryTitle">Título del recuerdo</label><input id="galleryTitle"
+          maxlength="100" placeholder="Un día para recordar" required></div>
+      <div class="form-grid">
+        <div class="form-field"><label for="galleryDate">Fecha</label><input id="galleryDate" type="date"></div>
+        <div class="form-field"><label for="galleryCategory">Categoría</label><select id="galleryCategory">
+            <option>Momentos</option>
+            <option>Viajes</option>
+            <option>Citas</option>
+            <option>Celebraciones</option>
+            <option>Cotidianos</option>
+          </select></div>
+      </div>
+      <div class="form-field"><label for="galleryDescription">Descripción</label><textarea id="galleryDescription"
+          rows="3" maxlength="800" placeholder="¿Qué hace especial este momento?"></textarea></div>
+      <div class="dialog-actions"><button class="button button-outline" type="button"
+          data-close="galleryDialog">Cancelar</button><button class="button button-primary" type="submit">Guardar
+          recuerdo</button></div>
+    </form>
+  </dialog>
+
+  <!-- View letter modal -->
+  <dialog class="app-dialog" id="letterViewDialog">
+    <div class="dialog-heading">
+      <div>
+        <p class="eyebrow">UNA CARTA PARA GUARDAR</p>
+        <h2 id="letterViewTitle">Para ti</h2>
+      </div><button class="dialog-close" type="button" data-close="letterViewDialog" aria-label="Cerrar">×</button>
+    </div>
+    <div id="letterViewContent"></div>
+    <div class="dialog-actions"><button class="button button-primary" type="button" data-close="letterViewDialog">Cerrar
+        carta ♥</button></div>
+  </dialog>
+
+  <!-- Add story modal -->
+  <dialog class="app-dialog" id="storyDialog">
+    <form id="storyForm" method="dialog">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">CAPÍTULO NUEVO</p>
+          <h2>Añadir a nuestra historia</h2>
+        </div><button class="dialog-close" type="button" data-close="storyDialog" aria-label="Cerrar">×</button>
+      </div>
+      <div class="form-field"><label for="storyTitle">Título del momento</label><input id="storyTitle" required
+          maxlength="100" placeholder="Nuestro primer viaje..."></div>
+      <div class="form-grid">
+        <div class="form-field"><label for="storyDate">Fecha</label><input id="storyDate" type="date" required></div>
+        <div class="form-field"><label for="storyCategory">Categoría</label><select id="storyCategory">
+            <option>Un comienzo</option>
+            <option>Una cita</option>
+            <option>Un viaje</option>
+            <option>Un logro</option>
+            <option>Un día especial</option>
+            <option>Un momento cotidiano</option>
+          </select></div>
+      </div>
+      <div class="form-field"><label for="storyDescription">¿Qué pasó ese día?</label><textarea id="storyDescription"
+          rows="3" maxlength="800" placeholder="Guarda aquí los detalles que no quieres olvidar..."></textarea></div>
+      <div class="form-field"><label for="storyImage">Foto opcional</label><input id="storyImage" type="file"
+          accept="image/*"></div>
+      <div class="dialog-actions"><button class="button button-outline" type="button"
+          data-close="storyDialog">Cancelar</button><button class="button button-primary" type="submit">Guardar
+          momento</button></div>
+    </form>
+  </dialog>
+
+  <!-- Add letter modal -->
+  <dialog class="app-dialog" id="letterDialog">
+    <form id="letterForm" method="dialog">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">CON CARIÑO</p>
+          <h2>Escribir una carta</h2>
+        </div><button class="dialog-close" type="button" data-close="letterDialog" aria-label="Cerrar">×</button>
+      </div>
+      <div class="form-field"><label for="letterTitle">Título</label><input id="letterTitle" required maxlength="100"
+          placeholder="Para cuando necesites sonreír..."></div>
+      <div class="form-field"><label for="letterText">Tu mensaje</label><textarea id="letterText" required rows="6"
+          maxlength="5000" placeholder="Escribe con el corazón..."></textarea></div>
+      <div class="form-field"><label for="letterImage">Una foto (opcional)</label><input id="letterImage" type="file"
+          accept="image/*"></div>
+      <div class="dialog-actions"><button class="button button-outline" type="button"
+          data-close="letterDialog">Cancelar</button><button class="button button-primary" type="submit">Guardar
+          carta</button></div>
+    </form>
+  </dialog>
+
+  <!-- Capsule modal -->
+  <dialog class="app-dialog" id="capsuleDialog">
+    <form id="capsuleForm" method="dialog">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">UN MENSAJE A TRAVÉS DEL TIEMPO</p>
+          <h2>Crear una cápsula</h2>
+        </div><button class="dialog-close" type="button" data-close="capsuleDialog" aria-label="Cerrar">×</button>
+      </div>
+      <div class="form-field"><label for="capsuleTitle">Título de la cápsula</label><input id="capsuleTitle" required
+          maxlength="100" placeholder="Para nosotros dentro de un año..."></div>
+      <div class="form-grid">
+        <div class="form-field"><label for="capsuleDate">Fecha de apertura</label><input id="capsuleDate" type="date"
+            required></div>
+        <div class="form-field"><label for="capsuleType">Tipo de cápsula</label><select id="capsuleType">
+            <option>💌 Carta para el futuro</option>
+            <option>📸 Recuerdo congelado</option>
+            <option>✨ Deseo para nosotros</option>
+            <option>❤️ Promesa</option>
+            <option>🎯 Meta juntos</option>
+          </select></div>
+      </div>
+      <div class="form-field"><label for="capsuleText">Mensaje para vuestro yo del futuro</label><textarea
+          id="capsuleText" required rows="5" maxlength="5000"
+          placeholder="¿Qué te gustaría recordar cuando llegue ese día?"></textarea></div>
+      <div class="form-grid">
+        <div class="form-field"><label for="capsuleAuthor">Escrito por</label><select id="capsuleAuthor">
+            <option value="Ambos">Los dos</option>
+            <option value="Yo">Yo</option>
+            <option value="Mi pareja">Mi pareja</option>
+          </select></div>
+        <div class="form-field"><label for="capsuleImage">Fotografía opcional</label><input id="capsuleImage"
+            type="file" accept="image/*"></div>
+      </div>
+      <div class="capsule-form-note">🔒 La cápsula aparecerá bloqueada hasta la fecha elegida. Esta versión funciona en
+        este dispositivo; no es una caja fuerte digital y alguien con acceso al navegador puede modificar sus datos.
+      </div>
+      <div class="dialog-actions"><button class="button button-outline" type="button"
+          data-close="capsuleDialog">Cancelar</button><button class="button button-primary" type="submit">Sellar cápsula
+          ♥</button></div>
+    </form>
+  </dialog>
+
+  <!-- Open capsule modal -->
+  <dialog class="app-dialog capsule-open-dialog" id="openCapsuleDialog">
+    <div class="dialog-heading">
+      <div>
+        <p class="eyebrow">EL MOMENTO HA LLEGADO</p>
+        <h2 id="openCapsuleTitle">Una carta desde el pasado</h2>
+      </div><button class="dialog-close" type="button" data-close="openCapsuleDialog" aria-label="Cerrar">×</button>
+    </div>
+    <div id="openCapsuleContent" class="open-capsule-content"></div>
+    <div class="dialog-actions"><button class="button button-primary" type="button"
+        data-close="openCapsuleDialog">Guardar este momento ♥</button></div>
+  </dialog>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
